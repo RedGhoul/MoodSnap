@@ -212,3 +212,26 @@
 "30_day_trend" = "Ein Monat Trend";
 "90_day_trend" = "Drei Monate trend";
 "all_data" = "Alle Daten";
+
+// Phase 2: Modern Navigation Strings
+"Timeline" = "Zeitleiste";
+"More" = "Mehr";
+"Quick Actions" = "Schnellaktionen";
+"Mark important moments" = "Wichtige Momente markieren";
+"Add a quick note" = "Schnelle Notiz hinzufügen";
+"Attach photos or media" = "Fotos oder Medien anhängen";
+"Support" = "Unterstützung";
+"Get help and support" = "Hilfe und Unterstützung erhalten";
+
+// Phase 3: Mood Entry Strings
+"Save Mood" = "Stimmung speichern";
+"Cancel" = "Abbrechen";
+"None" = "Keine";
+"Mild" = "Leicht";
+"Moderate" = "Mäßig";
+"Severe" = "Schwer";
+"Extreme" = "Extrem";
+
+// Phase 5: Insights Dashboard Strings
+"Entries" = "Einträge";
+"Days Tracked" = "Tage erfasst";
