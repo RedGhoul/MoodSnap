@@ -907,7 +907,186 @@ Smooth: 0.5s spring (response: 0.5, damping: 0.75)
 7. **Notes Preview:** See notes without expanding
 
 #### Next Steps:
-- Phase 5: Redesign InsightsView (analytics dashboard)
+✅ Complete! Moving to Phase 5...
+
+---
+
+### **PHASE 5: Analytics Dashboard Redesign** ✅ COMPLETE
+**Status:** ✅ Completed
+**Date:** 2025-11-14
+**Files Modified:** InsightsView.swift, all 5 localization files
+**Lines of Code:** Reduced from 691 to 449 lines (35% reduction through better organization)
+
+#### Key Improvements:
+
+1. **Hero Stats Section**
+   **Design:**
+   - Quick overview cards at top of dashboard
+   - 2-column grid layout
+   - Icon + Value + Label structure
+   - White background with subtle shadow
+   - Shows: Total Entries, Days Tracked
+
+   **Implementation:**
+   ```swift
+   struct HeroStatsSection: View {
+       LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())]) {
+           HeroStatCard(icon: "chart.bar.fill", label: "Entries", value: "...")
+           HeroStatCard(icon: "calendar.badge.clock", label: "Days Tracked", value: "...")
+       }
+   }
+   ```
+
+2. **Modern Segmented Picker**
+   **Design:**
+   - Enhanced time range picker (1mo, 3mo, 6mo, 1yr, All)
+   - Segmented style with rounded background
+   - Secondary grouped background color
+   - Small corner radius (8pt)
+   - Compact padding (4pt)
+
+   **Before:** Plain Picker
+   **After:** Modern SegmentedPickerStyle with background
+
+3. **Reusable InsightCard Component**
+   **Design:**
+   - Replaces repetitive GroupBox patterns
+   - Header button with icon, title, processing indicator, chevron
+   - Expandable content area
+   - Smooth spring animations (0.3 response, 0.7 damping)
+   - Asymmetric transitions (slides down on open, fades on close)
+   - Consistent shadow styling
+   - White background on grouped background
+   - Haptic feedback
+
+   **Structure:**
+   ```swift
+   struct InsightCard<Content: View>: View {
+       // Header Button
+       HStack {
+           Image(systemName: icon) // Medium size, theme color
+           Text(title)              // Headline font
+           Spacer()
+           ProgressView()           // If processing
+           Image(systemName: chevron) // Up/down circle.fill
+       }
+
+       // Expandable Content
+       if isExpanded {
+           content()
+               .padding(theme.spacing4)
+               .background(Color(.systemBackground))
+               .cornerRadius(theme.cornerRadiusMedium)
+               .transition(.asymmetric(...))
+       }
+   }
+   ```
+
+4. **Section Headers**
+   **Design:**
+   - UPPERCASE text in callout font
+   - Secondary color
+   - Left-aligned with top padding
+   - Sections: HISTORY, INFLUENCES, Transients, HEALTH
+
+5. **Card Organization**
+   **Before:** 691 lines with repetitive patterns
+   **After:** 449 lines with organized sections
+
+   **Sections:**
+   - **Hero Stats:** Quick overview (2 cards)
+   - **HISTORY:** 5 cards
+     - Average Mood
+     - Mood History
+     - Moving Average
+     - Volatility
+     - Tally
+   - **INFLUENCES:** 5 cards
+     - Activity
+     - Social
+     - Symptoms
+     - Events
+     - Hashtags
+   - **Transients:** 1 card
+     - Events (Butterfly)
+   - **HEALTH:** 5 conditional cards
+     - Weight
+     - Distance
+     - Energy
+     - Sleep
+     - Menstrual Cycle
+
+6. **Visual Consistency**
+   **Applied Throughout:**
+   - All cards use InsightCard component
+   - Consistent spacing (spacing3, spacing4, spacing5)
+   - Consistent corner radius (medium = 12pt)
+   - Consistent shadow (8pt radius, 2pt offset)
+   - Grouped background color
+   - Large navigation title
+   - Done button in toolbar with theme icon color
+
+7. **Added Localizations (All 5 Languages)**
+   - "Entries" (English, German: "Einträge", Spanish: "Entradas", French: "Entrées", Dutch: "Invoer")
+   - "Days Tracked" (English, German: "Tage erfasst", Spanish: "Días registrados", French: "Jours enregistrés", Dutch: "Dagen bijgehouden")
+
+#### Design Improvements:
+**Before:**
+- 691 lines with repetitive GroupBox patterns
+- Plain segmented picker
+- No hero stats or quick overview
+- Inconsistent card styling
+- No consistent expandable pattern
+- Mixed spacing and padding
+- No processing indicators
+
+**After:**
+- 449 lines (-35%) with reusable components
+- Modern segmented picker with background
+- Hero stats showing key metrics at top
+- Consistent InsightCard component throughout
+- Smooth expand/collapse animations
+- Professional section organization
+- Theme-consistent styling
+- Processing indicators for async operations
+- Clean visual hierarchy
+- Organized into logical sections
+
+#### Files Modified:
+- `/MoodSnap/InsightsView/InsightsView.swift` (streamlined from 691 to 449 lines)
+- `/MoodSnap/en.lproj/Localizable.strings` (+2 strings)
+- `/MoodSnap/de.lproj/Localizable.strings` (+2 strings)
+- `/MoodSnap/es.lproj/Localizable.strings` (+2 strings)
+- `/MoodSnap/fr.lproj/Localizable.strings` (+2 strings)
+- `/MoodSnap/nl.lproj/Localizable.strings` (+2 strings)
+
+#### Technical Highlights:
+- Created HeroStatsSection component with LazyVGrid
+- Created HeroStatCard component with icon + value + label
+- Created ModernSegmentedPicker with enhanced styling
+- Created SectionHeader component for consistent headers
+- Created InsightCard<Content: View> generic component
+- All cards use @Binding for expand/collapse state from DataStoreClass.uxState
+- Processing indicators tied to DataStoreClass.processingStatus
+- Conditional HEALTH section only shows if data exists
+- Asymmetric transitions for polished animations
+- All spacing uses theme system (spacing3, spacing4, spacing5)
+- All corner radius uses theme (cornerRadiusMedium)
+- All shadows use theme (shadowColor, shadowRadius, shadowY)
+
+#### User Experience Improvements:
+1. **Quick Overview:** Hero stats show key metrics at a glance
+2. **Better Organization:** Logical sections (History, Influences, Transients, Health)
+3. **Consistent Patterns:** All cards behave the same way
+4. **Visual Polish:** Shadows, rounded corners, consistent spacing
+5. **Clear Hierarchy:** Section headers, card titles, content all distinct
+6. **Processing Feedback:** Spinners show when data is being calculated
+7. **Conditional Display:** Health section only appears if data exists
+8. **Modern iOS Feel:** Grouped background, large title, clean layout
+
+#### Next Steps:
+- Phase 6: Settings redesign (if desired)
+- Phase 7: Final polish and accessibility audit
 
 ---
 

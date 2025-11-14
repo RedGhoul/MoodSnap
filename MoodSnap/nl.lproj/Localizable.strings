@@ -230,3 +230,7 @@
 "Moderate" = "Matig";
 "Severe" = "Ernstig";
 "Extreme" = "Extreem";
+
+// Phase 5: Insights Dashboard Strings
+"Entries" = "Invoer";
+"Days Tracked" = "Dagen bijgehouden";

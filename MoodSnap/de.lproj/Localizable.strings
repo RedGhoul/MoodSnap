@@ -231,3 +231,7 @@
 "Moderate" = "Mäßig";
 "Severe" = "Schwer";
 "Extreme" = "Extrem";
+
+// Phase 5: Insights Dashboard Strings
+"Entries" = "Einträge";
+"Days Tracked" = "Tage erfasst";
