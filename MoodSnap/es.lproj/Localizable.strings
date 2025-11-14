@@ -212,3 +212,13 @@
 "30_day_trend" = "Tendencia de un mes";
 "90_day_trend" = "Tendencia de tres meses";
 "all_data" = "Datos completos";
+
+// Phase 2: Modern Navigation Strings
+"Timeline" = "Línea de tiempo";
+"More" = "Más";
+"Quick Actions" = "Acciones rápidas";
+"Mark important moments" = "Marcar momentos importantes";
+"Add a quick note" = "Añadir una nota rápida";
+"Attach photos or media" = "Adjuntar fotos o medios";
+"Support" = "Soporte";
+"Get help and support" = "Obtener ayuda y soporte";

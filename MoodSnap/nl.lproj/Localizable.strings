@@ -211,3 +211,13 @@
 "Search_notes" = "Zoek notities";
 "Search_events" = "Zoek gebeurtenissen";
 "Search_MoodSnaps" = "Zoek MoodSnaps";
+
+// Phase 2: Modern Navigation Strings
+"Timeline" = "Tijdlijn";
+"More" = "Meer";
+"Quick Actions" = "Snelle acties";
+"Mark important moments" = "Markeer belangrijke momenten";
+"Add a quick note" = "Voeg een snelle notitie toe";
+"Attach photos or media" = "Foto's of media bijvoegen";
+"Support" = "Ondersteuning";
+"Get help and support" = "Hulp en ondersteuning krijgen";
