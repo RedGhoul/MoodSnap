@@ -221,3 +221,12 @@
 "Attach photos or media" = "Foto's of media bijvoegen";
 "Support" = "Ondersteuning";
 "Get help and support" = "Hulp en ondersteuning krijgen";
+
+// Phase 3: Mood Entry Strings
+"Save Mood" = "Stemming opslaan";
+"Cancel" = "Annuleren";
+"None" = "Geen";
+"Mild" = "Mild";
+"Moderate" = "Matig";
+"Severe" = "Ernstig";
+"Extreme" = "Extreem";

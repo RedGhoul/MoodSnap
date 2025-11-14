@@ -222,3 +222,12 @@
 "Attach photos or media" = "Joindre des photos ou médias";
 "Support" = "Support";
 "Get help and support" = "Obtenir de l'aide et du support";
+
+// Phase 3: Mood Entry Strings
+"Save Mood" = "Enregistrer l'humeur";
+"Cancel" = "Annuler";
+"None" = "Aucun";
+"Mild" = "Léger";
+"Moderate" = "Modéré";
+"Severe" = "Sévère";
+"Extreme" = "Extrême";

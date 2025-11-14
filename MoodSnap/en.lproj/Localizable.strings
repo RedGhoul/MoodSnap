@@ -272,3 +272,12 @@
 "Attach photos or media" = "Attach photos or media";
 "Support" = "Support";
 "Get help and support" = "Get help and support";
+
+// Phase 3: Mood Entry Strings
+"Save Mood" = "Save Mood";
+"Cancel" = "Cancel";
+"None" = "None";
+"Mild" = "Mild";
+"Moderate" = "Moderate";
+"Severe" = "Severe";
+"Extreme" = "Extreme";
