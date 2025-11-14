@@ -1,7 +1,7 @@
 # 🎨 MoodSnap UI/UX Redesign Plan
 ### **Goal: Create an award-worthy, modern, clean mental health app**
 
-**Status:** ✅ Phase 2 Complete - Navigation Redesigned
+**Status:** ✅ Phase 4 Complete - Timeline Redesigned
 **Last Updated:** 2025-11-14
 **Branch:** claude/redesign-ui-styling-01NK6VFpbXNo4ZsFkrG1maHp
 
@@ -441,11 +441,11 @@ Smooth: 0.5s spring (response: 0.5, damping: 0.75)
 - [ ] Implement expandable sections
 - [ ] Add animations
 
-### **Phase 4: Timeline** 📅 PLANNED
-- [ ] Redesign HistoryItemView cards
-- [ ] Add timeline visual elements
-- [ ] Enhance HistoryMoodView
-- [ ] Create empty state
+### **Phase 4: Timeline** ✅ COMPLETED
+- [x] Redesign HistoryItemView cards
+- [x] Add timeline visual elements
+- [x] Enhance HistoryMoodView
+- [x] Update pill-style tags for symptoms/activities/social
 
 ### **Phase 5: Insights** 📅 PLANNED
 - [ ] Redesign InsightsView layout
@@ -641,6 +641,109 @@ Smooth: 0.5s spring (response: 0.5, damping: 0.75)
 #### Next Steps:
 - Phase 3: Redesign MoodSnapView (mood entry form)
 - Phase 4: Redesign HistoryView (timeline cards)
+- Phase 5: Redesign InsightsView (analytics dashboard)
+
+---
+
+### 2025-11-14 - Phase 4 COMPLETED ✅
+**Modern Timeline with Visual Flow & Elegant Cards**
+
+#### Changes Made:
+1. **Redesigned `HistoryView/HistoryItemView.swift` (264 lines)**
+   - ✅ Added visual timeline: dot indicator + connecting line
+   - ✅ Modern card design with shadows and rounded corners
+   - ✅ Left accent border matching dominant mood color
+   - ✅ Clean header: icon + timestamp + mood dots + menu
+   - ✅ Intelligent color coding: dominant EDAI dimension determines accent
+   - ✅ Improved menu: ellipsis.circle icon with proper labels
+   - ✅ Smooth shadow (0.5x radius for subtlety)
+
+2. **Created New Component**
+   - ✅ **MoodIndicatorDots**: Quick visual summary of EDAI levels
+     * Color-coded circles for each dimension
+     * Size scaled by level (6pt to 12pt)
+     * Only shows non-zero dimensions
+     * Positioned in card header
+
+3. **Enhanced `HistoryView/HistoryMoodView.swift` (90 lines)**
+   - ✅ Improved spacing with theme system (spacing2-3)
+   - ✅ Better section headers with icons and color
+   - ✅ Subtle dividers (gridColor.opacity(0.5))
+   - ✅ Modern notes display: secondary background + rounded corners
+   - ✅ Better typography hierarchy (fontCallout for labels)
+   - ✅ Increased line spacing for readability
+
+4. **Modernized Pill Tags (3 files)**
+   - ✅ **HistorySymptomsView.swift**: Pill-style tags instead of plain text
+   - ✅ **HistoryActivityView.swift**: Matching pill design
+   - ✅ **HistorySocialView.swift**: Consistent pill styling
+
+   **Pill Design:**
+   - White text on theme.buttonColor background (0.85 opacity)
+   - Rounded corners (cornerRadiusSmall: 8pt)
+   - Proper padding (horizontal: 12pt, vertical: 6pt)
+   - Adaptive grid layout (80-150pt item width)
+   - Better spacing (spacing2: 8pt)
+
+5. **Timeline Visual Design**
+   **Timeline Dot:**
+   - 12pt circle filled with accent color
+   - 2pt white stroke for definition
+   - Connects to vertical line below
+
+   **Timeline Line:**
+   - 2pt width, gridColor
+   - Runs between entries
+   - Creates flowing visual connection
+
+   **Accent Border:**
+   - 4pt left border on card
+   - Matches dominant mood color
+   - Provides quick visual scan
+
+#### Color Logic:
+**Intelligent accent color selection:**
+- Mood entries: Dominant EDAI dimension color
+- Event entries: emergencyColor (red)
+- Note/Media entries: iconColor (theme accent)
+- Fallback: gridColor (neutral gray)
+
+#### Design Improvements:
+**Before:**
+- Plain GroupBox containers
+- No visual flow between entries
+- Plain text symptoms/activities
+- Dense, cramped spacing
+- No visual hierarchy
+- Generic appearance
+
+**After:**
+- Visual timeline with dots and connecting line
+- Color-coded accent borders
+- Modern card shadows
+- Pill-style tags for symptoms/activities/social
+- Generous spacing (theme system)
+- Clear visual hierarchy
+- Professional, magazine-quality layout
+- Quick mood indicators in header
+
+#### Files Modified:
+- `/MoodSnap/HistoryView/HistoryItemView.swift` (complete redesign)
+- `/MoodSnap/HistoryView/HistoryMoodView.swift` (enhanced layout)
+- `/MoodSnap/HistoryView/HistorySymptomsView.swift` (pill tags)
+- `/MoodSnap/HistoryView/HistoryActivityView.swift` (pill tags)
+- `/MoodSnap/HistoryView/HistorySocialView.swift` (pill tags)
+
+#### Technical Highlights:
+- Timeline implemented with HStack + VStack geometry
+- Accent color uses intelligent algorithm (max EDAI level)
+- MoodIndicatorDots shows quick visual summary
+- Pill tags use adaptive grid (GridItem.adaptive)
+- All spacing uses theme system for consistency
+- Shadow optimized (0.5x for timeline cards)
+
+#### Next Steps:
+- Phase 3: Redesign MoodSnapView (mood entry form) OR
 - Phase 5: Redesign InsightsView (analytics dashboard)
 
 ---
